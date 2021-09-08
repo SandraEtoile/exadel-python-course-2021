@@ -13,7 +13,7 @@ def is_narcissistic_number(number):
     number_of_digits = count_digits(number, digits)
     powers = []
     for d in digits:
-        power = pow(d, number_of_digits)
+        power = d**number_of_digits
         powers.append(power)
     return sum(powers) == number
 
