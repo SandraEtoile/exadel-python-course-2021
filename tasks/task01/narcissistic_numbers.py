@@ -19,6 +19,7 @@ def is_narcissistic_number(number):
 
 
 narcissistic_numbers = []
+
 for i in range(1, 1001):
     if is_narcissistic_number(i):
         narcissistic_numbers.append(i)
