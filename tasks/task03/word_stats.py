@@ -31,7 +31,7 @@ for count, i in enumerate(texts):
     list_of_words = list(cleaned_sentence.lower().split())
     for word in list_of_words:
         count_for_word(counts)
-    if not counts:
-        print(texts)
-    else:
-        print_word_result(counts)
+if not counts:
+    print(texts)
+else:
+    print_word_result(counts)
