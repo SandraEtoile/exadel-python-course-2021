@@ -32,6 +32,6 @@ for count, i in enumerate(texts):
     for word in list_of_words:
         count_for_word(counts)
 if not counts:
-    print(texts)
+    print("Text didn't found. Please correct your sequence")
 else:
     print_word_result(counts)
