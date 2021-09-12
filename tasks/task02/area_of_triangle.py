@@ -49,12 +49,13 @@ while area_calc_user_choice != 3:
     print(menu)
     area_calc_user_choice = int(input("Enter menu item number: "))
     if area_calc_user_choice == 1:
-        area = calculate_area_basement_height()
+        area = calculate_area_basement_height_user_input()
+        print(f'Area is:  {area:.3f}')
     elif area_calc_user_choice == 2:
-        area = calculate_area_two_sides_angle()
+        area = calculate_area_two_sides_angle_user_input()
+        print(f'Area is:  {area:.3f}')
     elif area_calc_user_choice == 3:
         print('Goodbye!')
         break
     else:
         print('Choose the correct value')
-    print(f'Area is:  {area:.3f}')
