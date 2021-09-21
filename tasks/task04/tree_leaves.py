@@ -13,17 +13,23 @@ tree = {
 flat_tree = [1, 2, 3]
 
 
-def collect_leaves(tree):
+def collect_leaves(x):
     leaves = []
-    for k, v in tree.items():
-        if isinstance(v, dict):
-            leaves.extend(collect_leaves(v))
-        else:
-            leaves.extend(v)
+    if isinstance(x, dict):
+        for k, v in x.items():
+            if isinstance(v, dict):
+                leaves.extend(collect_leaves(v))
+            else:
+                leaves.extend(v)
+    else:
+        leaves.extend(x)
     return leaves
 
 
 print(collect_leaves(tree))
 
+print(collect_leaves(flat_tree))
+
 
 assert collect_leaves(tree) == [1, 2, 3, 4, 5, 6, 7, 8, 9]
+assert collect_leaves(flat_tree) == [1, 2, 3]
