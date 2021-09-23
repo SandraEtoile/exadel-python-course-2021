@@ -16,7 +16,7 @@ flat_tree = [1, 2, 3]
 def collect_leaves(x):
     leaves = []
     if isinstance(x, dict):
-        for k, v in x.items():
+        for v in x.values():
             if isinstance(v, dict):
                 leaves.extend(collect_leaves(v))
             else:
