@@ -1,7 +1,7 @@
-def create_user(*args, age=42, **kwargs):
+def create_user(first_name: str, last_name: str, age: int = 42, **kwargs):
     return {
-        "name": args[0],
-        "surname": args[1],
+        "name": first_name,
+        "surname": last_name,
         "age": age,
         "extra": kwargs
     }
