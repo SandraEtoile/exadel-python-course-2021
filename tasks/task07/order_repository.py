@@ -34,7 +34,7 @@ class OrderRepository:
         self.orders.append(order)
 
     def get(self, order_id: uuid.UUID) -> Order:
-        return [o for o in self.orders if o.order_id == order_id].pop(0)
+        return next((o for o in self.orders if o.order_id == order_id), None)
 
     def list(self, n_latest: int = None) -> List[Order]:
         if n_latest is None:
@@ -43,8 +43,7 @@ class OrderRepository:
             return self.orders[-n_latest:]
 
     def delete(self, order_id):
-        order_to_be_deleted = [o for o in self.orders if o.order_id == order_id].pop(0)
-        self.orders.remove(order_to_be_deleted)
+        self.orders.remove(self.get(order_id))
 
 
 notebook = Good(uuid.uuid4(), "notebook", 10)
