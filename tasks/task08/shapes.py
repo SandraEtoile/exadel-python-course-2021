@@ -86,8 +86,6 @@ class Shape2DCollection(Shape2D):
         for shape in self.shapes:
             if shape.__contains__(point):
                 return True
-            else:
-                continue
         return False
 
     def __str__(self) -> str:

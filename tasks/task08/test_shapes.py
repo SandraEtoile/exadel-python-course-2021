@@ -3,7 +3,7 @@ import unittest
 from tasks.task08.shapes import Circle, Point2D, Rectangle, Square, Shape2DCollection
 
 
-class TestShapes(unittest.TestCase):
+class CircleTest(unittest.TestCase):
 
     def test_circle_area(self):
         circle = Circle([1, 2], 5)
@@ -30,6 +30,8 @@ class TestShapes(unittest.TestCase):
         point = Point2D(10.0, 7.0)
         self.assertFalse(circle.__contains__(point), "Correct value is False")
 
+
+class RectangleTest(unittest.TestCase):
     def test_rectangle_area(self):
         rectangle = Rectangle([1, 2], 5, 10)
         area = rectangle.area
@@ -55,6 +57,8 @@ class TestShapes(unittest.TestCase):
         point = Point2D(12.0, 8.0)
         self.assertFalse(rectangle.__contains__(point), "Correct value is False")
 
+
+class SquareTest(unittest.TestCase):
     def test_square_area(self):
         square = Square([1, 2], 5)
         area = square.area
@@ -80,6 +84,8 @@ class TestShapes(unittest.TestCase):
         point = Point2D(12.0, 8.0)
         self.assertFalse(square.__contains__(point), "Correct value is False")
 
+
+class Shape2DTest(unittest.TestCase):
     def test_shape2d_collection_area(self):
         square = Square([1, 2], 5)
         rectangle = Rectangle([1, 2], 5, 10)
